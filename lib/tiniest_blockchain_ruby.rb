@@ -1,5 +1,6 @@
 require "tiniest_blockchain_ruby/version"
 require "openssl"
+require "date"
 
 module TiniestBlockchainRuby
   class Block
@@ -9,6 +10,10 @@ module TiniestBlockchainRuby
       @data          = data
       @previous_hash = previous_hash
       @hash          = hash_block
+    end
+
+    def self.create_genesis_block
+      self.new(0, Date.today.to_time, "Genesis Block", "0")
     end
 
     attr_reader :index, :timestamp, :data, :previous_hash, :hash
