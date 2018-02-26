@@ -19,10 +19,10 @@ module TiniestBlockchainRuby
     def self.next_block(last_block)
       this_index         = last_block.index + 1
       this_timestamp     = Date.today.to_time
-      this_data          = "Hey! I'm block #{this_indx}"
+      this_data          = "Hey! I'm block #{this_index}"
       this_previous_hash = last_block.hash
 
-      self.new(this_index, this_timstamp, this_data, this_previous_hash)
+      self.new(this_index, this_timestamp, this_data, this_previous_hash)
     end
 
     attr_reader :index, :timestamp, :data, :previous_hash, :hash
